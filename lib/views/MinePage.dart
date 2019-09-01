@@ -13,9 +13,9 @@ class _Page extends State<MinePage>{
   }
   Widget layout(BuildContext context){
     return new Scaffold(
-      appBar: MyWidgets.buildAppBar(context, "发现"),
+      appBar: MyWidgets.buildAppBar(context, "我的"),
       body: Center(
-        child: Text("发现"),
+        child: Text("我i的"),
       ),
     );
   }
