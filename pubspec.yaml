@@ -43,9 +43,35 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #  - images/a_dot_burr.jpeg
-  #  - images/a_dot_ham.jpeg
+  assets:
+    - images/icons/fenlei_one.png
+    - images/icons/fenlei_tr.png
+    - images/icons/fenlei_two.png
+    - images/icons/fuwu.png
+    - images/icons/huishou.png
+    - images/icons/huishou_o.png
+    - images/icons/huishou_t.png
+    - images/icons/jiadian.png
+    - images/icons/kefu.png
+    - images/icons/laji.png
+    - images/icons/micai.png
+    - images/icons/mima.png
+    - images/icons/paotui.png
+    - images/icons/shanchu.png
+    - images/icons/shangmen.png
+    - images/icons/shouji.png
+    - images/icons/shouye_o.png
+    - images/icons/shouye_t.png
+    - images/icons/sousuo.png
+    - images/icons/weixiu.png
+    - images/icons/wode.png
+    - images/icons/xiangji_o.png
+    - images/icons/xiangji_t.png
+    - images/icons/xiugai.png
+    - images/icons/yuyue.png
+    - images/icons/zhuce.png
+    - images/icons/weixiu.png
+    - images/icons/zhuozi.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -34,7 +34,6 @@ class HttpUtils {
         url = url.replaceAll(':$key', value.toString());
       }
     });
-
     /// 打印请求相关信息：请求地址、请求方式、请求参数
     print('请求地址：【' + method + '  ' + url + '】');
     print('请求参数：' + data.toString());
@@ -42,9 +41,7 @@ class HttpUtils {
     var result;
     try {
       Response response = await dio.request(url, data: data, options: new Options(method: method));
-
       result = response.data;
-
       /// 打印响应相关信息
       print('响应数据：' + response.toString());
     } on DioError catch (e) {
@@ -71,4 +68,23 @@ class HttpUtils {
   static clear () {
     dio = null;
   }
+
+ static Future<dynamic> httpGetShelf (String url) async {
+    Future<dynamic> result = await request(url, method: GET,);
+    return result;
+  }
+  static Future<dynamic> httpPostShelf (String url) async {
+    Future<dynamic> result = await request(url, method: POST,);
+    return result;
+  }
+  static Future<dynamic> httpFromDataShelf (String url,FormData formData) async {
+    Response response = await dio.post(url, data: formData);
+    return response.data;
+  }
+  static Future<dynamic> httpDownloadShelf (String urlPath,String savePath) async {
+    Response response = await dio.download(urlPath, savePath);
+    return response.data;
+  }
+
+
 }
