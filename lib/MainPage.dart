@@ -42,7 +42,8 @@ class _MainPageState extends State<_MainPageWidget> with AutomaticKeepAliveClien
   Widget build (BuildContext context){
      intData();
      return Scaffold(
-       body: _pageList[_tabIndex],
+        // body: _pageList[_tabIndex],
+       body: IndexedStack(index: _tabIndex, children:_pageList),
        bottomNavigationBar: new BottomNavigationBar(
          items: <BottomNavigationBarItem>[
            new BottomNavigationBarItem(

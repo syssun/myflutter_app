@@ -78,25 +78,24 @@ class _Page extends State<HomePage>{
   }
   List<Widget> gridViewList(BuildContext context){
     List<Widget> widlist = new List();
-    widlist.add(buildItem(context,HomeMenus("锁屏", "images/icons/fenlei_one.png","")));
-    widlist.add(buildItem(context,HomeMenus("解锁", "images/icons/huishou.png","")));
-    widlist.add(buildItem(context,new HomeMenus('关闭微信', 'images/icons/zhuozi.png', 'jisuanqi')));
+    widlist.add(buildItem(context,HomeMenus("预约上门", "images/icons/yuyue.png","")));
+    widlist.add(buildItem(context,HomeMenus("家电回收", "images/icons/huishou.png","")));
+    widlist.add(buildItem(context,new HomeMenus('木材物品', 'images/icons/micai.png', 'jisuanqi')));
 
     return widlist;
   }
   List<Widget> gridViewList2(BuildContext context){
     List<Widget> widlist = new List();
-    widlist.add(buildItem(context,HomeMenus("60S关机", "images/icons/kefu.png","")));
-    widlist.add(buildItem(context,HomeMenus("打开QQ", "images/icons/mima.png","")));
-    widlist.add(buildItem(context,HomeMenus("关闭QQ", "images/icons/shangmen.png","")));
+    widlist.add(buildItem(context,HomeMenus("家电预估", "images/icons/jiadian.png","")));
+    widlist.add(buildItem(context,HomeMenus("跑腿服务", "images/icons/paotui.png","")));
+    widlist.add(buildItem(context,HomeMenus("桌子椅子", "images/icons/zhuozi.png","")));
     return widlist;
   }
   List<Widget> gridViewList3(BuildContext context){
     List<Widget> widlist = new List();
-    widlist.add(buildItem(context,new HomeMenus('计算器', 'images/icons/weixiu.png', 'jisuanqi')));
-    widlist.add(buildItem(context,HomeMenus('打开微信', 'images/icons/xiangji_o.png', 'jisuanqi')));
-    widlist.add(buildItem(context,HomeMenus("取消关机","images/icons/micai.png","")));
-
+    widlist.add(buildItem(context,new HomeMenus('家电维修', 'images/icons/weixiu.png', 'jisuanqi')));
+    widlist.add(buildItem(context,HomeMenus('垃圾分类', 'images/icons/fenlei_two.png', 'jisuanqi')));
+    widlist.add(buildItem(context,HomeMenus("扔垃圾","images/icons/laji.png","")));
     return widlist;
   }
   Widget buildItem(BuildContext context,HomeMenus homeMenus){
