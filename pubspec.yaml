@@ -25,6 +25,8 @@ dependencies:
   fluttertoast: ^2.1.1
   flutter_swiper: ^1.1.6
   dio: ^2.1.16
+  flutter_cache_manager: ^1.1.1
+  cached_network_image: ^1.1.1
 
 dev_dependencies:
   flutter_test:

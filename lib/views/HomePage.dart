@@ -60,9 +60,9 @@ class _Page extends State<HomePage>{
   }
   List<Widget> swipterlist(BuildContext context){
     List<Widget> w = new List();
-    w.add(MyWidgets.imageNet("http://pic25.nipic.com/20121112/9252150_150552938000_2.jpg"));
-    w.add(MyWidgets.imageNet("http://pic16.nipic.com/20111006/6239936_092702973000_2.jpg"));
-    w.add(MyWidgets.imageNet("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567179064933&di=c79c1b5e153c23facc616aa27ee18f92&imgtype=0&src=http%3A%2F%2Fb.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F908fa0ec08fa513db777cf78376d55fbb3fbd9b3.jpg"));
+    w.add(MyWidgets.imageNetCache("http://pic25.nipic.com/20121112/9252150_150552938000_2.jpg"));
+    w.add(MyWidgets.imageNetCache("http://pic16.nipic.com/20111006/6239936_092702973000_2.jpg"));
+    w.add(MyWidgets.imageNetCache("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567179064933&di=c79c1b5e153c23facc616aa27ee18f92&imgtype=0&src=http%3A%2F%2Fb.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F908fa0ec08fa513db777cf78376d55fbb3fbd9b3.jpg"));
     return w ;
   }
   Widget _swiperBuilder(BuildContext context,int index) {

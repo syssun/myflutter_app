@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 class MyWidgets {
 
   static Widget buildAppBar(BuildContext context,String title){
@@ -7,6 +8,10 @@ class MyWidgets {
   static Image imageNet(String src){
     return new Image.network(src,fit: BoxFit.fill,);
   }
+  static Image imageNetCache(String src){
+    return Image(image: new CachedNetworkImageProvider(src),fit: BoxFit.fill,);
+  }
+
   static Image imageAssetWithSize(String src,{double size=50.0}){
     return new Image.asset(src,width: size,height: size,fit: BoxFit.fill,);
   }
