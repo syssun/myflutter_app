@@ -27,6 +27,7 @@ dependencies:
   dio: ^2.1.16
   flutter_cache_manager: ^1.1.1
   cached_network_image: ^1.1.1
+  image_picker: ^0.4.3
 
 dev_dependencies:
   flutter_test:
