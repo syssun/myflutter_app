@@ -14,13 +14,28 @@ class LoginPageState extends State<LoginPage>{
         appBar: MyWidgets.buildAppBar(context, '登录'),
         body: new Container(
           child: Center(
-            child: new TextFormField(
-              decoration: new InputDecoration(
-                labelText: '手机',
-              ),
-              onSaved: (val) {
-                print(val);
-              },
+            child: Column(
+              children: <Widget>[
+                new Container(
+                  child: new Image.network("http://pic25.nipic.com/20121112/9252150_150552938000_2.jpg"),
+                ),
+                new TextFormField(
+                  decoration: new InputDecoration(
+                    labelText: '手机',
+                  ),
+                  onSaved: (val) {
+                    print(val);
+                  },
+                ),
+                new TextFormField(
+                  decoration: new InputDecoration(
+                    labelText: '密码',
+                  ),
+                  onSaved: (val) {
+                    print(val);
+                  },
+                )
+              ],
             ),
           ),
         ),
