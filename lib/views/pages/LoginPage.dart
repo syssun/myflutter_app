@@ -17,7 +17,7 @@ class LoginPageState extends State<LoginPage>{
             child: Column(
               children: <Widget>[
                 new Container(
-                  child: new Image.network("http://pic25.nipic.com/20121112/9252150_150552938000_2.jpg"),
+                  child: MyWidgets.imageAssetWithSize("images/icons/yuyue.png"),
                 ),
                 new TextFormField(
                   decoration: new InputDecoration(
@@ -34,7 +34,17 @@ class LoginPageState extends State<LoginPage>{
                   onSaved: (val) {
                     print(val);
                   },
-                )
+                ),
+                new Text("立即注册"),
+                new MaterialButton(
+                  child: Text("登录"),
+                  elevation: 20,
+                  color: Colors.blue,
+                  textColor: Colors.white,
+                  onPressed: (){
+                    print('我被点击了');
+                  },
+                ),
               ],
             ),
           ),

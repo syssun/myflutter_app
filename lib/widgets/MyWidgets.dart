@@ -25,4 +25,25 @@ class MyWidgets {
         child: new Text(title,style: textStyle)
     );
   }
+
+  static SlideTransition createTransition(
+      Animation<double> animation, Widget child) {
+    return new SlideTransition(
+      position: new Tween<Offset>(
+        begin: const Offset(1.0, 0.0),
+        end: const Offset(0.0, 0.0),
+      ).animate(animation),
+      child: child,
+    );
+  }
+  static  Function jump(BuildContext context,Widget widget) {
+     Navigator.push<String>(
+      context,
+      new MaterialPageRoute(
+          builder: (context) => widget,
+      ),
+    );
+  }
+
+
 }

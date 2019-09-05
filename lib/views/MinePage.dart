@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:myflutter_app/views/pages/LoginPage.dart';
 import 'dart:async';
 import 'package:myflutter_app/widgets/MyWidgets.dart';
 import 'package:image_picker/image_picker.dart';
@@ -18,6 +19,10 @@ class _Page extends State<MinePage>{
       _image = image;
     });
   }
+
+
+
+
   @override
   Widget build(BuildContext context){
     return layout(context);
@@ -31,7 +36,7 @@ class _Page extends State<MinePage>{
             : Image.file(_image),
       ),
         floatingActionButton: FloatingActionButton(
-          onPressed: getImage,
+          onPressed: MyWidgets.jump(context, new LoginPage()),
           tooltip: '选择图片',
           child: Icon(Icons.add_a_photo),
         )
