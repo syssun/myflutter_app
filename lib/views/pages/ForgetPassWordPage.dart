@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:myflutter_app/views/pages/ForgetPassWordPage.dart';
 import 'package:myflutter_app/widgets/MyWidgets.dart';
 
-import 'RegisterPage.dart';
-
-class LoginPage extends StatefulWidget{
+class ForgetPassWordPage extends StatefulWidget{
   @override
   State<StatefulWidget> createState(){
-    return new LoginPageState();
+    return new ForgetPassWordPageState();
   }
 }
-class LoginPageState extends State<LoginPage>{
+class ForgetPassWordPageState extends State<ForgetPassWordPage>{
 
-    @override
-    Widget build(BuildContext context){
-      //SingleChildScrollView
-      return
-         new Scaffold(
+  @override
+  Widget build(BuildContext context){
+    //SingleChildScrollView
+    return
+      new Scaffold(
           resizeToAvoidBottomPadding: true,
-          appBar: MyWidgets.buildAppBar(context, '登录'),
+          appBar: MyWidgets.buildAppBar(context, '重置密码'),
           body:
           SingleChildScrollView(
             child:new Container(
@@ -36,9 +33,9 @@ class LoginPageState extends State<LoginPage>{
                       child: new TextFormField(
                         decoration: new InputDecoration(
                           // labelText: '手机',
-                            icon: new Icon(Icons.phone),
-                            contentPadding: const EdgeInsets.symmetric(vertical: 8.0),
-                            hintText: '请输入手机号',
+                          icon: new Icon(Icons.phone),
+                          contentPadding: const EdgeInsets.symmetric(vertical: 8.0),
+                          hintText: '请输入手机号',
                         ),
                         onSaved: (val) {
                           print(val);
@@ -50,11 +47,9 @@ class LoginPageState extends State<LoginPage>{
                       child: new TextFormField(
                         obscureText: true,
                         decoration: new InputDecoration(
-                          // labelText: '请输入密码',
                             icon: new Icon(Icons.lock),
                             contentPadding: const EdgeInsets.symmetric(vertical: 8.0),
-                            //prefixIcon:new Icon(Icons.lock),
-                            hintText: '密码'
+                            hintText: '请输入验证码'
                         ),
                         onSaved: (val) {
                           print(val);
@@ -63,35 +58,37 @@ class LoginPageState extends State<LoginPage>{
                       ),
                     ),
                     new Container(
-                      margin: EdgeInsets.only(top: 20.0,bottom: 20.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          new GestureDetector(
-                            child:new Text("立即注册",style: new TextStyle(
-                                color: Colors.blue
-                            ),),
-                            onTap:(){
-                              jump(context,new RegisterPage());
-                            } ,
-                          ),
-                          new GestureDetector(
-                            child:new Text("忘记密码",style: new TextStyle(
-                                color: Colors.red
-                            ),),
-                            onTap:(){
-                              jump(context,new ForgetPassWordPage());
-                            } ,
-                          ),
-
-
-                        ],
+                      margin: EdgeInsets.only(top:20.0,left: 10.0,right: 10.0,bottom: 10.0),
+                      child: new TextFormField(
+                        obscureText: true,
+                        decoration: new InputDecoration(
+                            icon: new Icon(Icons.lock),
+                            contentPadding: const EdgeInsets.symmetric(vertical: 8.0),
+                            hintText: '请输入密码'
+                        ),
+                        onSaved: (val) {
+                          print(val);
+                        },
+                      ),
+                    ),
+                    new Container(
+                      margin: EdgeInsets.only(top:20.0,left: 10.0,right: 10.0,bottom: 10.0),
+                      child: new TextFormField(
+                        obscureText: true,
+                        decoration: new InputDecoration(
+                            icon: new Icon(Icons.lock),
+                            contentPadding: const EdgeInsets.symmetric(vertical: 8.0),
+                            hintText: '请再次输入密码'
+                        ),
+                        onSaved: (val) {
+                          print(val);
+                        },
                       ),
                     ),
                     new Container(
                       margin: EdgeInsets.all(20.0),
                       child: new MaterialButton(
-                        child: Text("登录"),
+                        child: Text("重置密码"),
                         elevation: 20,
                         minWidth: double.infinity,
                         color: Colors.blue,
@@ -107,16 +104,9 @@ class LoginPageState extends State<LoginPage>{
               ),
             ),
           )
-         );
-    }
+      );
+  }
 
-    void   jump(BuildContext context,Widget widget) {
-      Navigator.push<String>(
-        context,
-        new MaterialPageRoute(
-          builder: (context) => widget,
-        ),
-      ) ;
-    }
+
 
 }
