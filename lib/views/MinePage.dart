@@ -20,6 +20,14 @@ class _Page extends State<MinePage>{
     });
   }
 
+  void   jump(BuildContext context,Widget widget) {
+    Navigator.push<String>(
+      context,
+      new MaterialPageRoute(
+        builder: (context) => widget,
+      ),
+    ) ;
+  }
 
 
 
@@ -36,7 +44,9 @@ class _Page extends State<MinePage>{
             : Image.file(_image),
       ),
         floatingActionButton: FloatingActionButton(
-          onPressed: MyWidgets.jump(context, new LoginPage()),
+          onPressed: (){
+            jump(context,new LoginPage());
+          },
           tooltip: '选择图片',
           child: Icon(Icons.add_a_photo),
         )

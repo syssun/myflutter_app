@@ -36,14 +36,7 @@ class MyWidgets {
       child: child,
     );
   }
-  static  Function jump(BuildContext context,Widget widget) {
-     Navigator.push<String>(
-      context,
-      new MaterialPageRoute(
-          builder: (context) => widget,
-      ),
-    );
-  }
+
 
 
 }
