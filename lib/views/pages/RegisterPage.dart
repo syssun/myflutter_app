@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:myflutter_app/widgets/MyWidgets.dart';
@@ -10,7 +12,40 @@ class RegisterPage extends StatefulWidget{
 }
 class RegisterPageState extends State<RegisterPage>{
 
-    @override
+  Timer _countdownTimer;
+  String _codeCountdownStr = '获取验证码';
+  int _countdownNum = 59;
+  String retss(){
+    return null;
+  }
+  Future<bool> reGetCountdown() {
+    setState(() {
+      if (_countdownTimer != null) {
+        return null;
+      }
+      Fluttertoast.showToast(msg: '已发送');
+      // Timer的第一秒倒计时是有一点延迟的，为了立刻显示效果可以添加下一行。
+      _codeCountdownStr = '${_countdownNum--}s重新获取';
+      _countdownTimer =
+      new Timer.periodic(new Duration(seconds: 1), (timer) {
+        setState(() {
+          if (_countdownNum > 0) {
+            _codeCountdownStr = '${_countdownNum--}s重新获取';
+          } else {
+            _codeCountdownStr = '获取验证码';
+            _countdownNum = 59;
+            _countdownTimer.cancel();
+            _countdownTimer = null;
+          }
+        });
+      });
+    });
+    return null;
+  }
+
+
+
+  @override
     Widget build(BuildContext context){
       //SingleChildScrollView
       return
@@ -41,6 +76,40 @@ class RegisterPageState extends State<RegisterPage>{
                           print(val);
                         },
                       ),
+                    ),
+                    Flex(
+                      direction: Axis.horizontal,
+                      children: <Widget>[
+                        new Expanded(
+                          flex: 3,
+                          child: new Container(
+                            margin: EdgeInsets.only(top:20.0,left: 10.0,right: 10.0,bottom: 10.0),
+                            child: new TextFormField(
+                              obscureText: false,
+                              decoration: new InputDecoration(
+                                // labelText: '请输入验证码',
+                                  icon: new Icon(Icons.lock),
+                                  contentPadding: const EdgeInsets.symmetric(vertical: 8.0),
+                                  //prefixIcon:new Icon(Icons.lock),
+                                  hintText: '请输入验证码'
+                              ),
+                              onSaved: (val) {
+                                print(val);
+                              },
+
+                            ),
+                          )
+                        ),
+                        new Expanded(
+                          flex: 1,
+                          child: new MaterialButton(
+                              disabledColor: Colors.grey,
+                              disabledTextColor: Colors.grey,
+                              child: new Text(_codeCountdownStr ,style: new TextStyle(color: Colors.blue,fontSize: 12.0),),
+                              onPressed: ()=>retss,
+                           ),
+                        )
+                      ],
                     ),
                     new Container(
                       margin: EdgeInsets.only(top:20.0,left: 10.0,right: 10.0,bottom: 10.0),
@@ -116,5 +185,10 @@ class RegisterPageState extends State<RegisterPage>{
     }
 
 
-
+  @override
+  void dispose() {
+    _countdownTimer?.cancel();
+    _countdownTimer = null;
+    super.dispose();
+  }
 }
